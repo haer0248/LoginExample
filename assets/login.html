@@ -1,0 +1,32 @@
+<div class="page page-center">
+    <div class="container container-tight py-4">
+        <div class="text-center mb-4">
+            <a href="../" class="navbar-brand"><img src="https://image.haer0248.me/discord_avatar.png" height="64" alt=""></a>
+        </div>
+        <form class="card card-md" action="../assets/accounts.php" method="post" autocomplete="off">
+            <input type="hidden" name="action" value="login">
+            <div class="card-body">
+                <h2 class="h2 text-center mb-4">登入您的帳號</h2>
+                <div class="mb-3">
+                    <label class="form-label required">帳號</label>
+                    <input name="username" type="text" class="form-control" placeholder="Username" autocomplete="off" tabindex="1" required="" maxlength="16">
+                </div>
+                <div class="mb-2">
+                    <label class="form-label required">密碼
+                        <span class="form-label-description">
+                            <a href="#!">忘記密碼</a>
+                        </span>
+                    </label>
+                    <div class="input-group input-group-flat">
+                        <input name="password" type="password" class="form-control" placeholder="********" autocomplete="off" tabindex="2" required="">
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary w-100">登入</button>
+                </div>
+            </div>
+        </form>
+        <div class="text-center text-muted mt-3">
+            還沒有帳號嗎？<a href="../register" tabindex="-1">點我註冊</a>
+        </div>
+    </div>
