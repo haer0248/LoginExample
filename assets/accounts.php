@@ -3,6 +3,7 @@
 include('sql.inc.php');
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") { // 只接受 POST
+    $return['rewrite'] = '../';
     try {
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -19,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { // 只接受 POST
                     $_SESSION['id'] = $result['No'];
                     $_SESSION['username'] = $result['username'];
 
+                    $return['rewrite'] = '../custom';
                     throw new Exception("帳號登入成功", 0);
                 } else {
                     throw new Exception("登入失敗，帳號或密碼錯誤", 1);
@@ -78,5 +80,4 @@ $_SESSION['alert'] = $return;
 /**
  * 導回首頁
  */
-
- Header('Location: ../');
+Header('Location: '.$return['rewrite']);
